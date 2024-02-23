@@ -1,19 +1,19 @@
-# EmbodyAICar
+# MindedWheeler
 Embody_AI with car as Demo
 
 <center>
-    <img src="https://github.com/FreedomIntelligence/EmbodyAICar/blob/main/assets/embodyaicar.png" width="450" style="display: inline-block; vertical-align: top;"/>
+    <img src="https://github.com/FreedomIntelligence/MindedWheeler/blob/main/assets/MindedWheeler.png" width="450" style="display: inline-block; vertical-align: top;"/>
 </center>
 
 
 
 
 <p align="center">
-   🌐 <a href="" target="_blank">Website</a> • 🤗 <a href="https://huggingface.co/FreedomIntelligence/EmbodyAICar" target="_blank">Model</a>  
+   🌐 <a href="" target="_blank">Website</a> • 🤗 <a href="https://huggingface.co/FreedomIntelligence/MindedWheeler" target="_blank">Model</a>  
 </p>
 
 ## 🌈 Update
-* **[2024.02.23]** 🎉🎉🎉 EmbodyAICar is published！🎉🎉🎉
+* **[2024.02.23]** 🎉🎉🎉 MindedWheeler is published！🎉🎉🎉
 
 ## 🤖 Model Training Data
 
@@ -28,13 +28,13 @@ RobotAI: (1.0, -0.3)
 
 ## 🤖 Communication Protocol
 
-- 0x02, 0x02, 0x01, 8, data_buf;  (See detail in [code](https://github.com/FreedomIntelligence/EmbodyAICar/blob/main/qwen.cpp#L151))
+- 0x02, 0x02, 0x01, 8, data_buf;  (See detail in [code](https://github.com/FreedomIntelligence/MindedWheeler/blob/main/qwen.cpp#L151))
     
 
 ## ℹ️ Usage
-1. DownLoad 🤗 [Model](https://huggingface.co/FreedomIntelligence/EmbodyAICar) get model.bin.
+1. DownLoad 🤗 [Model](https://huggingface.co/FreedomIntelligence/MindedWheeler) get model.bin.
    ```
-   cd EmbodyAICar
+   cd MindedWheeler
    git submodule update --init --recursive
    python qwen_cpp/convert.py -i {Model_Path} -t {type} -o robot1_8b-ggml.bin
    ```
@@ -86,13 +86,13 @@ Please use the following citation if you intend to use our dataset for training 
 
 
 ```
-@misc{embodyAiCar,
-  title={EmbodyAICar: Embody_AI with car as Demo},
+@misc{MindedWheeler,
+  title={MindedWheeler: Embody_AI with car as Demo},
   author={Xidong Wang*, Yuan Shen*},
   year = {2024},
   publisher = {GitHub},
   journal = {GitHub repository},
-  howpublished = {\url{https://github.com/FreedomIntelligence/EmbodyAICar}},
+  howpublished = {\url{https://github.com/FreedomIntelligence/MindedWheeler}},
 }
 ```
 
