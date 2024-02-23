@@ -38,14 +38,6 @@ Embody_AI with car as Demo
 Please use the following citation if you intend to use our dataset for training or evaluation:
 
 
-```
-@article{wang2023cmb,
-  title={CMB: A Comprehensive Medical Benchmark in Chinese},
-  author={Wang, Xidong and Chen, Guiming Hardy and Song, Dingjie and Zhang, Zhiyi and Chen, Zhihong and Xiao, Qingying and Jiang, Feng and Li, Jianquan and Wan, Xiang and Wang, Benyou and others},
-  journal={arXiv preprint arXiv:2308.08833},
-  year={2023}
-}
-```
 
 ```
 @misc{embodyAiCar,
