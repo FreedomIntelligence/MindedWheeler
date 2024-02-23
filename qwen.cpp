@@ -100,6 +100,9 @@ auto TextStreamer::put(const std::vector<int> &output_ids) -> void {
   }
 
   static const std::vector<char> puncts{',', '!', ':', ';', '?'};
+  static std::string accumulated_text;
+  
+
 
   token_cache_.insert(token_cache_.end(), output_ids.begin(), output_ids.end());
   std::string text = tokenizer_->decode(token_cache_);
@@ -127,19 +130,21 @@ auto TextStreamer::put(const std::vector<int> &output_ids) -> void {
   accumulated_text += printable_text;
 
   // 使用正则表达式检查是否存在"float, float"模式
-  std::regex float_pair_pattern(R"((-?\d+(\.\d+)?)\s*,\s*(-?\d+(\.\d+)?))");
+  // std::regex float_pair_pattern(R"((-?\d+(\.\d+)?)\s*,\s*(-?\d+(\.\d+)?))");
+  std::regex float_pair_pattern(R"((-?\d+\.\d+)\s*,\s*(-?\d+\.\d+))");
   std::smatch matches;
-  if (std::regex_search(accumulated_text, matches, float_pair_pattern) && matches.size() == 5) {
+  if (std::regex_search(accumulated_text, matches, float_pair_pattern) && matches.size() ==3) {
     // 如果找到匹配，提取两个浮点数
     float vel_x = std::stof(matches[1].str());
-    float ang_z = std::stof(matches[3].str());
-
+    float ang_z = std::stof(matches[2].str());
+    
+    // std::cout <<accumulated_text;
     // 清空累积的文本
     accumulated_text.clear();
 
     // 在这里可以根据需要使用 float1 和 float2
     // 例如打印出来
-    std::cout << "Extracted floats: " << float1 << ", " << float2 << std::endl;
+    std::cout << "Extracted floats: " << vel_x << ", " << ang_z << std::endl;
     uint8_t data_buf[8];
     serial_->float_to_data(vel_x,&data_buf[0]);
     serial_->float_to_data(ang_z,&data_buf[4]);
@@ -343,9 +348,9 @@ auto QwenTokenizer::build_prompt(const std::vector<std::string> &history) const 
   QWEN_CHECK(history.size() % 2 == 1) << "invalid history size " << history.size();
 
   std::ostringstream oss_prompt;
-  oss_prompt << "";
+  oss_prompt << "您的任务是将人类的自然语言指令转换为机器可执行的动作。每条指令包含速度（-1到1）和方向（左转为负，右转为正）。例如，“轻轻向前移动一点”应转换为(0.2, 0.0)，表示缓慢前进。指令“向右快速转弯”对应(0.5, 1.0)，快速前进并右转。特别注意，指令如“停下来”应转换为(0.0, 0.0)，完全停止；而“轻轻向后退”则是(-0.2, 0.0)，缓慢后退。请确保精确理解并响应指令。";
   for (size_t i = 0; i < history.size() - 1; i += 2) {
-    oss_prompt << "User:" << history[i] << \n" << history[i + 1] << "<|im_end|>";
+    oss_prompt << "User:" << history[i] << "\n" << history[i + 1] << "<|im_end|>";
   }
   oss_prompt << "User:" << history.back() <<  "\nAssistant:\n";
 
