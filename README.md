@@ -32,7 +32,7 @@ RobotAI: (1.0, -0.3)
     
 
 ## ℹ️ Usage
-1. DownLoad 🤗 [Model](https://huggingface.co/FreedomIntelligence/EmbodyAICar) get model.bin and qwen.tiktoken.
+1. DownLoad 🤗 [Model](https://huggingface.co/FreedomIntelligence/EmbodyAICar) get model.bin.
    ```
    cd EmbodyAICar
    git submodule update --init --recursive
@@ -59,6 +59,7 @@ RobotAI: (1.0, -0.3)
     cmake --build build -j --config Release
     ```
 4. Now you may chat and control your AI car with the quantized RobotAI model by running:
+   - qwen.tiktoken is in the model directory
    ```
    ./build/bin/main -m robot1_8b-ggml.bin --tiktoken qwen.tiktoken -p 请快速向前
    ```
