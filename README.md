@@ -28,7 +28,7 @@ RobotAI: (1.0, -0.3)
 
 ## 🤖 Communication Protocol
 
-- 0x33 0x33 0x03 {} sum  (See detail in [code](https://github.com/FreedomIntelligence/EmbodyAICar/blob/main/qwen.cpp#L151))
+- serial_->USR_Packet_Send(0x02,0x02,0x01,8,data_buf);  (See detail in [code](https://github.com/FreedomIntelligence/EmbodyAICar/blob/main/qwen.cpp#L151))
     
 
 ## ℹ️ Usage
