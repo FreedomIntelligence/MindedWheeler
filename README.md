@@ -36,6 +36,10 @@ Embody_AI with car as Demo
    In interactive mode, your chat history will serve as the context for the next-round conversation.
 
 
+## To do list
+
+1. Continue to create data and train a robust model
+2. Add ASR and TTS
 
 
 ##  Citation
