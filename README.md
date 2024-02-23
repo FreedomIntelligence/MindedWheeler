@@ -1,2 +1,63 @@
-# Embody_AI
+# EmbodyAICar
 Embody_AI with car as Demo
+
+![CMB](assets/title.png)
+<p align="center">
+   🌐 <a href="" target="_blank">Website</a> • 🤗 <a href="" target="_blank">Model</a>  
+</p>
+
+## 🌈 Update
+* **[2024.02.23]** 🎉🎉🎉 EmbodyAICar is published！🎉🎉🎉
+
+
+## ℹ️ Usage
+1. Follow [Qwen.cpp](https://github.com/QwenLM/qwen.cpp.git) get model.bin and qwen.tiktoken.
+2. Install package serial.tar.gz
+   ```
+    cd serial
+    cmake .. & make & sudo make install
+    ```
+3. Compile the project using CMake:
+    ```
+    cmake -B build
+    cmake --build build -j --config Release
+    ```
+4. Now you may chat and control your AI car with the quantized RobotAI model by running:
+
+  ./build/bin/main -m robot1_8b-ggml.bin --tiktoken qwen.tiktoken -p 请快速向前
+  
+  To run the model in interactive mode, add the -i flag. For example:
+  
+  ./build/bin/main -m robot1_8b-ggml.bin --tiktoken qwen.tiktoken -i
+  In interactive mode, your chat history will serve as the context for the next-round conversation.
+
+
+
+
+##  Citation
+Please use the following citation if you intend to use our dataset for training or evaluation:
+
+
+```
+@article{wang2023cmb,
+  title={CMB: A Comprehensive Medical Benchmark in Chinese},
+  author={Wang, Xidong and Chen, Guiming Hardy and Song, Dingjie and Zhang, Zhiyi and Chen, Zhihong and Xiao, Qingying and Jiang, Feng and Li, Jianquan and Wan, Xiang and Wang, Benyou and others},
+  journal={arXiv preprint arXiv:2308.08833},
+  year={2023}
+}
+```
+
+```
+@misc{embodyAiCar,
+  title={EmbodyAICar: Embody_AI with car as Demo},
+  author={Xidong Wang*, Yuan Shen*},
+  year = {2024},
+  publisher = {GitHub},
+  journal = {GitHub repository},
+  howpublished = {\url{https://github.com/wangxidong06/EmbodyAICar}},
+}
+```
+
+
+## Acknowledgement 
+- We thank [Qwen.cpp](https://github.com/QwenLM/qwen.cpp.git) and [llama.cpp](https://github.com/ggerganov/llama.cpp) for their excellent work.
