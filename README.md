@@ -50,8 +50,9 @@ RobotAI: (1.0, -0.3)
 
 2. Install package serial.tar.gz
    ```
+    tar zxvf serial.tar.gz
     cd serial
-    cmake .. & make & sudo make install
+    cmake .. && make && sudo make install
     ```
 3. Compile the project using CMake:
     ```
