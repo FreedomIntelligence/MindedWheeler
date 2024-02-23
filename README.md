@@ -9,7 +9,7 @@ Embody_AI with car as Demo
 
 
 <p align="center">
-   🌐 <a href="" target="_blank">Website</a> • 🤗 <a href="" target="_blank">Model</a>  
+   🌐 <a href="" target="_blank">Website</a> • 🤗 <a href="https://huggingface.co/FreedomIntelligence/EmbodyAICar" target="_blank">Model</a>  
 </p>
 
 ## 🌈 Update
@@ -32,7 +32,7 @@ RobotAI: (1.0, -0.3)
     
 
 ## ℹ️ Usage
-1. DownLoad [Model]() and Follow [Qwen.cpp](https://github.com/QwenLM/qwen.cpp.git) get model.bin and qwen.tiktoken.
+1. DownLoad 🤗 [Model](https://huggingface.co/FreedomIntelligence/EmbodyAICar) and Follow [Qwen.cpp](https://github.com/QwenLM/qwen.cpp.git) get model.bin and qwen.tiktoken.
 2. Install package serial.tar.gz
    ```
     cd serial
