@@ -126,8 +126,8 @@ auto TextStreamer::put(const std::vector<int> &output_ids) -> void {
   // 累加到accumulated_text
   accumulated_text += printable_text;
 
-  // 使用正则表达式检查是否存在"(float, float)"模式
-  std::regex float_pair_pattern(R"(\(\s*(-?\d+(\.\d+)?)\s*,\s*(-?\d+(\.\d+)?)\s*\))");
+  // 使用正则表达式检查是否存在"float, float"模式
+  std::regex float_pair_pattern(R"((-?\d+(\.\d+)?)\s*,\s*(-?\d+(\.\d+)?))");
   std::smatch matches;
   if (std::regex_search(accumulated_text, matches, float_pair_pattern) && matches.size() == 5) {
     // 如果找到匹配，提取两个浮点数
@@ -343,11 +343,11 @@ auto QwenTokenizer::build_prompt(const std::vector<std::string> &history) const 
   QWEN_CHECK(history.size() % 2 == 1) << "invalid history size " << history.size();
 
   std::ostringstream oss_prompt;
-  oss_prompt << "<|im_start|>system\nYou are a helpful assistant.<|im_end|>";
+  oss_prompt << "";
   for (size_t i = 0; i < history.size() - 1; i += 2) {
-    oss_prompt << "\n<|im_start|>user\n" << history[i] << "<|im_end|>\n<|im_start|>" << history[i + 1] << "<|im_end|>";
+    oss_prompt << "User:" << history[i] << \n" << history[i + 1] << "<|im_end|>";
   }
-  oss_prompt << "\n<|im_start|>user\n" << history.back() <<  "<|im_end|>\n<|im_start|>assistant\n";
+  oss_prompt << "User:" << history.back() <<  "\nAssistant:\n";
 
   return oss_prompt.str();
 }
