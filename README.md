@@ -1,7 +1,7 @@
 # EmbodyAICar
 Embody_AI with car as Demo
 
-![CMB](assets/title.png)
+![CMB](assets/embodyaicar.png)
 <p align="center">
    🌐 <a href="" target="_blank">Website</a> • 🤗 <a href="" target="_blank">Model</a>  
 </p>
