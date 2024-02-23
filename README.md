@@ -15,9 +15,21 @@ Embody_AI with car as Demo
 ## 🌈 Update
 * **[2024.02.23]** 🎉🎉🎉 EmbodyAICar is published！🎉🎉🎉
 
+## 🤖 Model Training Data
+
+    ```
+    User：快速向左转
+    RobotAI: (1.0, -0.3)  # The two float are in range [-1,1], the first float is speed, the second is direction(negative means left, positive means right).  
+    ```
+
+## 🤖 Communication Protocol
+
+    ```
+    0x33 0x33 0x03 {} sum  # See detail in [code](https://github.com/FreedomIntelligence/EmbodyAICar/blob/main/qwen.cpp#L151)
+    ```
 
 ## ℹ️ Usage
-1. Follow [Qwen.cpp](https://github.com/QwenLM/qwen.cpp.git) get model.bin and qwen.tiktoken.
+1. DownLoad [Model]() and Follow [Qwen.cpp](https://github.com/QwenLM/qwen.cpp.git) get model.bin and qwen.tiktoken.
 2. Install package serial.tar.gz
    ```
     cd serial
@@ -40,7 +52,6 @@ Embody_AI with car as Demo
      ```
 
    In interactive mode, your chat history will serve as the context for the next-round conversation.
-
 
 ## 🥸 To do list
 
