@@ -36,14 +36,14 @@ Embody_AI with car as Demo
    In interactive mode, your chat history will serve as the context for the next-round conversation.
 
 
-## To do list
+## 🥸 To do list
 
 - Continue to create data and train a robust model
 - Add ASR and TTS
 - ...
 
 
-##  Citation
+## ✨ Citation
 Please use the following citation if you intend to use our dataset for training or evaluation:
 
 
