@@ -2,7 +2,7 @@
 Embody_AI with car as Demo
 
 
-< img src="https://github.com/FreedomIntelligence/EmbodyAICar/blob/main/assets/embodyaicar.png" width="450" style="display: inline-block; vertical-align: top;"/>
+<img src="https://github.com/FreedomIntelligence/EmbodyAICar/blob/main/assets/embodyaicar.png" width="450" style="display: inline-block; vertical-align: top;"/>
 
 
 <p align="center">
