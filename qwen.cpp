@@ -7,6 +7,7 @@
 #include <random>
 #include <thread>
 #include <sys/stat.h>
+#include <regex> // 引入正则表达式头文件
 
 #ifdef __has_include
 #if __has_include(<unistd.h>)
@@ -111,6 +112,7 @@ auto TextStreamer::put(const std::vector<int> &output_ids) -> void {
     // flush the cache after newline
     printable_text = text.substr(print_len_);
     token_cache_.clear();
+    accumulated_text.clear();
     print_len_ = 0;
   } else if (std::find(puncts.begin(), puncts.end(), text.back()) != puncts.end()) {
     // last symbol is a punctuation, hold on
@@ -121,26 +123,30 @@ auto TextStreamer::put(const std::vector<int> &output_ids) -> void {
     print_len_ = text.size();
   }
 
-  os_ << printable_text << std::flush;
-  /***/
+  // 累加到accumulated_text
+  accumulated_text += printable_text;
 
+  // 使用正则表达式检查是否存在"(float, float)"模式
+  std::regex float_pair_pattern(R"(\(\s*(-?\d+(\.\d+)?)\s*,\s*(-?\d+(\.\d+)?)\s*\))");
+  std::smatch matches;
+  if (std::regex_search(accumulated_text, matches, float_pair_pattern) && matches.size() == 5) {
+    // 如果找到匹配，提取两个浮点数
+    float vel_x = std::stof(matches[1].str());
+    float ang_z = std::stof(matches[3].str());
 
+    // 清空累积的文本
+    accumulated_text.clear();
 
-
-  /***/
-
-  static uint8_t test=1;
-  if(test==1)
-  {
-    test=0;
-    float vel_x = 0.2f;//-1~ +1
-    float ang_z = 0.4f;//-1~ +1
+    // 在这里可以根据需要使用 float1 和 float2
+    // 例如打印出来
+    std::cout << "Extracted floats: " << float1 << ", " << float2 << std::endl;
     uint8_t data_buf[8];
     serial_->float_to_data(vel_x,&data_buf[0]);
     serial_->float_to_data(ang_z,&data_buf[4]);
     serial_->USR_Packet_Send(0x02,0x02,0x01,8,data_buf);
+    
   }
-
+  os_ << printable_text << std::flush;
   
 }
 
