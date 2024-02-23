@@ -1,9 +1,10 @@
 # EmbodyAICar
 Embody_AI with car as Demo
 
-<div style="display: flex; justify-content: center;">
-    <img src="https://github.com/FreedomIntelligence/EmbodyAICar/blob/main/assets/embodyaicar.png" width="450"/>
-</div>
+<center>
+    <img src="https://github.com/FreedomIntelligence/EmbodyAICar/blob/main/assets/embodyaicar.png" width="450" style="display: inline-block; vertical-align: top;"/>
+</center>
+
 
 
 
