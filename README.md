@@ -50,7 +50,7 @@ Please use the following citation if you intend to use our dataset for training 
   year = {2024},
   publisher = {GitHub},
   journal = {GitHub repository},
-  howpublished = {\url{https://github.com/wangxidong06/EmbodyAICar}},
+  howpublished = {\url{https://github.com/FreedomIntelligence/EmbodyAICar}},
 }
 ```
 
