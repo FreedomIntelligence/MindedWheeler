@@ -38,8 +38,9 @@ Embody_AI with car as Demo
 
 ## To do list
 
-1. Continue to create data and train a robust model
-2. Add ASR and TTS
+- Continue to create data and train a robust model
+- Add ASR and TTS
+- ...
 
 
 ##  Citation
