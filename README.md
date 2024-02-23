@@ -32,7 +32,22 @@ RobotAI: (1.0, -0.3)
     
 
 ## ℹ️ Usage
-1. DownLoad 🤗 [Model](https://huggingface.co/FreedomIntelligence/EmbodyAICar) and Follow [Qwen.cpp](https://github.com/QwenLM/qwen.cpp.git) get model.bin and qwen.tiktoken.
+1. DownLoad 🤗 [Model](https://huggingface.co/FreedomIntelligence/EmbodyAICar) get model.bin and qwen.tiktoken.
+   ```
+   cd EmbodyAICar
+   git submodule update --init --recursive
+   python qwen_cpp/convert.py -i {Model_Path} -t {type} -o robot1_8b-ggml.bin
+   ```
+   You are free to try any of the below quantization types by specifying -t <type>:
+
+    - q4_0: 4-bit integer quantization with fp16 scales.
+    - q4_1: 4-bit integer quantization with fp16 scales and minimum values.
+    - q5_0: 5-bit integer quantization with fp16 scales.
+    - q5_1: 5-bit integer quantization with fp16 scales and minimum values.
+    - q8_0: 8-bit integer quantization with fp16 scales.
+    - f16: half precision floating point weights without quantization.
+    - f32: single precision floating point weights without quantization.
+
 2. Install package serial.tar.gz
    ```
     cd serial
