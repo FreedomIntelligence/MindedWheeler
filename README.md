@@ -24,7 +24,7 @@ RobotAI: (1.0, -0.3)
 ```
 
 - The two float are in range [-1,1]
-- The first float is speed, the second is direction(negative means left, positive means right).
+- The first float is speed, the second is direction (negative means left, positive means right).
 
 ## 🤖 Communication Protocol
 
