@@ -27,13 +27,13 @@ Embody_AI with car as Demo
    ./build/bin/main -m robot1_8b-ggml.bin --tiktoken qwen.tiktoken -p 请快速向前
    ```
 
-  To run the model in interactive mode, add the -i flag. For example:
+   To run the model in interactive mode, add the -i flag. For example:
 
-  ```
-  ./build/bin/main -m robot1_8b-ggml.bin --tiktoken qwen.tiktoken -i
-  ```
+     ```
+     ./build/bin/main -m robot1_8b-ggml.bin --tiktoken qwen.tiktoken -i
+     ```
 
-  In interactive mode, your chat history will serve as the context for the next-round conversation.
+   In interactive mode, your chat history will serve as the context for the next-round conversation.
 
 
 
